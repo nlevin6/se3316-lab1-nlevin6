@@ -14,3 +14,18 @@
     background-color: #dfdfdf;
     border: 1px solid black;
   }
+
+  .search-bars{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    height: 10vh;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+  }
+  .search-form{
+    background: #ffffff;
+    width: 600px;
+    height: 25px;
+  }
