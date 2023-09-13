@@ -12,10 +12,121 @@ function searchFunc() {
         alert("more than 20 chracters!");
         return false;
     }
-    
+
     //checks for the currency search box
     if (currencyQuery.length > 0 && !/^[A-Z]{3}$/.test(currencyQuery)) {
         alert("Only 3 upper case letters are allowed!");
         return false;
+    }
+
+    //it doesn't wanna fetch from a json file for me for some reason so I'm storing all the data here in a const variable
+    const data = [
+        {
+            "name": "Andorra",
+            "currency": "EUR"
+        },
+        {
+            "name": "Austria",
+            "currency": "EUR"
+        },
+        {
+            "name": "Australia",
+            "currency": "AUD"
+        },
+        {
+            "name": "Belgium",
+            "currency": "EUR"
+        },
+        {
+            "name": "Bulgaria",
+            "currency": "BGN"
+        },
+        {
+            "name": "Canada",
+            "currency": "CAD"
+        },
+        {
+            "name": "Switzerland",
+            "currency": "CHF"
+        },
+        {
+            "name": "Ivory Coast",
+            "currency": "XOF"
+        },
+        {
+            "name": "China",
+            "currency": "CNY"
+        },
+        {
+            "name": "Czechia",
+            "currency": "CZK"
+        },
+        {
+            "name": "Germany",
+            "currency": "EUR"
+        },
+        {
+            "name": "Denmark",
+            "currency": "DKK"
+        },
+        {
+            "name": "Greece",
+            "currency": "EUR"
+        },
+        {
+            "name": "Israel",
+            "currency": "ILS"
+        },
+        {
+            "name": "India",
+            "currency": "INR"
+        },
+        {
+            "name": "Italy",
+            "currency": "EUR"
+        },
+        {
+            "name": "Japan",
+            "currency": "JPY"
+        },
+        {
+            "name": "South Korea",
+            "currency": "KRW"
+        },
+        {
+            "name": "Lebanon",
+            "currency": "LBP"
+        },
+        {
+            "name": "Slovakia",
+            "currency": "EUR"
+        }
+    
+    ]
+    
+
+
+    let matches = [];
+
+    //filters for the country search bar
+    if (countryQuery.length > 0) {
+        matches = data.filter(item => item.name.toLowerCase().includes(countryQuery.toLowerCase()));
+    }
+
+    //filters for the currency search bar
+    if (currencyQuery.length > 0) {
+        const currencyQueryUpper = currencyQuery.toUpperCase();
+        matches = data.filter(item => item.currency.toUpperCase().includes(currencyQueryUpper));
+    }
+
+    //code for showing the up to 5 matches in the alert box
+    let msg = "";
+    for (let i = 0; i < Math.min(5, matches.length); i++) {
+        msg += `Name: ${matches[i].name}, Currency: ${matches[i].currency}\n`;
+    }
+    if (msg.length > 0) {
+        alert(msg);
+    } else {
+        alert("No matches");
     }
 }
