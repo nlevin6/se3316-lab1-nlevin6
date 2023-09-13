@@ -1,0 +1,83 @@
+[
+    {
+        "name": "Andorra",
+        "currency": "Euro"
+    },
+    {
+        "name": "Austria",
+        "currency": "Euro"
+    },
+    {
+        "name": "Australia",
+        "currency": "Australian Dollar"
+    },
+    {
+        "name": "Belgium",
+        "currency": "Euro"
+    },
+    {
+        "name": "Bulgaria",
+        "currency": "Lev"
+    },
+    {
+        "name": "Canada",
+        "currency": "Canadian Dollar"
+    },
+    {
+        "name": "Switzerland",
+        "currency": "Swiss Franc"
+    },
+    {
+        "name": "Ivory Coast",
+        "currency": "West African CFA franc"
+    },
+    {
+        "name": "China",
+        "currency": "Chinese Yuan"
+    },
+    {
+        "name": "Czechia",
+        "currency": "Czech Koruna"
+    },
+    {
+        "name": "Germany",
+        "currency": "Euro"
+    },
+    {
+        "name": "Denmark",
+        "currency": "Danish Krone"
+    },
+    {
+        "name": "Greece",
+        "currency": "Euro"
+    },
+    {
+        "name": "Israel",
+        "currency": "Israeli New Shekel"
+    },
+    {
+        "name": "India",
+        "currency": "Indian Rupee"
+    },
+    {
+        "name": "Italy",
+        "currency": "Euro"
+    },
+    {
+        "name": "Japan",
+        "currency": "Japanese yen"
+    },
+    {
+        "name": "South Korea",
+        "currency": "Korean Republic Won"
+    },
+    {
+        "name": "Lebanon",
+        "currency": "Lebanese pound"
+    },
+    {
+        "name": "Slovakia",
+        "currency": "Euro"
+    }
+
+]
