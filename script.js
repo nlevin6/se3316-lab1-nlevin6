@@ -103,8 +103,6 @@ function searchFunc() {
         }
     
     ]
-    
-
 
     let matches = [];
 
@@ -115,8 +113,7 @@ function searchFunc() {
 
     //filters for the currency search bar
     if (currencyQuery.length > 0) {
-        const currencyQueryUpper = currencyQuery.toUpperCase();
-        matches = data.filter(item => item.currency.toUpperCase().includes(currencyQueryUpper));
+        matches = data.filter(item => item.currency.toUpperCase().includes(currencyQuery.toUpperCase()));
     }
 
     //code for showing the up to 5 matches in the alert box
