@@ -9,7 +9,7 @@ function searchFunc() {
 
     //checks for the country search box
     if (countryQuery.length > 20) {
-        alert("more than 20 chracters!");
+        alert("more than 20 chracterss!");
         return false;
     }
 
