@@ -216,17 +216,28 @@ function searchUpdate() {
         }
 
     ]
+        //check if both boxes are blank so that no alert pops up (idk it acts weird without this so i guess i gotta do this)
+        if (countryQuery.length === 0 && currencyQuery.length === 0) {
+            return false;
+        }
+    
+        //checks for the country search box
+        if (countryQuery.length > 20) {
+            alert("more than 20 chracters!");
+            return false;
+        }
+    
+        //checks for the currency search box
+        if (currencyQuery.length > 0 && !/^[A-Z]{3}$/.test(currencyQuery)) {
+            alert("Only 3 upper case letters are allowed!");
+            return false;
+        }
 
     //clears any existing search results
     while (searchResultsList.firstChild) {
         searchResultsList.removeChild(searchResultsList.firstChild);
     }
 
-    // //handle empty search bars (it will display nothing)
-    // if (countryQuery.length === 0 && currencyQuery.length === 0) {
-    //     document.querySelector(".search-results").style.display = "none";
-    //     return;
-    // }
     //filters for the country search bar
     if (countryQuery.length > 0) {
         matches = data.filter(item => item.name.toLowerCase().includes(countryQuery.toLowerCase()));
@@ -235,4 +246,19 @@ function searchUpdate() {
     if (currencyQuery.length > 0) {
         matches = data.filter(item => item.currency.toUpperCase().includes(currencyQuery.toUpperCase()));
     }
+
+    matches.slice(0, 5).forEach(match => {
+        const listItem = document.createElement("li");
+        listItem.textContent = `Name: ${match.name}, Currency: ${match.currency}`;
+        searchResultsList.appendChild(listItem);
+    });
+
+    if (matches.length > 0) {
+        document.querySelector(".search-results").style.display = "block";
+    } else {
+        document.querySelector(".search-results").style.display = "none";
+    }
+
+    document.getElementById("countryBar").addEventListener("input", searchUpdate);
+    document.getElementById("currencyBar").addEventListener("input", searchUpdate);
 }
