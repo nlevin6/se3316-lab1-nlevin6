@@ -9,7 +9,7 @@ function searchFunc() {
 
     //checks for the country search box
     if (countryQuery.length > 20) {
-        alert("more than 20 chracterss!");
+        alert("more than 20 chracters!");
         return false;
     }
 
@@ -101,7 +101,7 @@ function searchFunc() {
             "name": "Slovakia",
             "currency": "EUR"
         }
-    
+
     ]
 
     let matches = [];
@@ -125,5 +125,114 @@ function searchFunc() {
         alert(msg);
     } else {
         alert("No matches");
+    }
+}
+
+function searchUpdate() {
+    let countryQuery = document.getElementById("countryBar").value;
+    let currencyQuery = document.getElementById("currencyBar").value;
+    let searchResultsList = document.querySelector(".search-results-list");
+    let matches = [];
+    const data = [
+        {
+            "name": "Andorra",
+            "currency": "EUR"
+        },
+        {
+            "name": "Austria",
+            "currency": "EUR"
+        },
+        {
+            "name": "Australia",
+            "currency": "AUD"
+        },
+        {
+            "name": "Belgium",
+            "currency": "EUR"
+        },
+        {
+            "name": "Bulgaria",
+            "currency": "BGN"
+        },
+        {
+            "name": "Canada",
+            "currency": "CAD"
+        },
+        {
+            "name": "Switzerland",
+            "currency": "CHF"
+        },
+        {
+            "name": "Ivory Coast",
+            "currency": "XOF"
+        },
+        {
+            "name": "China",
+            "currency": "CNY"
+        },
+        {
+            "name": "Czechia",
+            "currency": "CZK"
+        },
+        {
+            "name": "Germany",
+            "currency": "EUR"
+        },
+        {
+            "name": "Denmark",
+            "currency": "DKK"
+        },
+        {
+            "name": "Greece",
+            "currency": "EUR"
+        },
+        {
+            "name": "Israel",
+            "currency": "ILS"
+        },
+        {
+            "name": "India",
+            "currency": "INR"
+        },
+        {
+            "name": "Italy",
+            "currency": "EUR"
+        },
+        {
+            "name": "Japan",
+            "currency": "JPY"
+        },
+        {
+            "name": "South Korea",
+            "currency": "KRW"
+        },
+        {
+            "name": "Lebanon",
+            "currency": "LBP"
+        },
+        {
+            "name": "Slovakia",
+            "currency": "EUR"
+        }
+
+    ]
+
+    //clears any existing search results
+    while (searchResultsList.firstChild) {
+        searchResultsList.removeChild(searchResultsList.firstChild);
+    }
+
+    // //handle empty search bars (it will display nothing)
+    // if (countryQuery.length === 0 && currencyQuery.length === 0) {
+    //     document.querySelector(".search-results").style.display = "none";
+    //     return;
+    // }
+    //filters for the country search bar
+    if (countryQuery.length > 0) {
+        matches = data.filter(item => item.name.toLowerCase().includes(countryQuery.toLowerCase()));
+    }
+    //filters for the currency search bar
+    if (currencyQuery.length > 0) {
+        matches = data.filter(item => item.currency.toUpperCase().includes(currencyQuery.toUpperCase()));
     }
 }
