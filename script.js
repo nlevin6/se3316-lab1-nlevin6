@@ -9,7 +9,7 @@ function searchFunc() {
 
     //checks for the country search box
     if (countryQuery.length > 20) {
-        alert("more than 20 chracters!");
+        alert("more than 20 characters!");
         return false;
     }
 
@@ -128,6 +128,7 @@ function searchFunc() {
     }
 }
 
+//dynamic search results
 function searchUpdate() {
     let countryQuery = document.getElementById("countryBar").value;
     let currencyQuery = document.getElementById("currencyBar").value;
@@ -216,22 +217,26 @@ function searchUpdate() {
         }
 
     ]
-        //check if both boxes are blank so that no alert pops up (idk it acts weird without this so i guess i gotta do this)
-        if (countryQuery.length === 0 && currencyQuery.length === 0) {
-            return false;
+    //check if both boxes are blank so that no alert pops up
+    if (countryQuery.length === 0 && currencyQuery.length === 0) {
+        while (searchResultsList.firstChild) {
+            searchResultsList.removeChild(searchResultsList.firstChild);
         }
-    
-        //checks for the country search box
-        if (countryQuery.length > 20) {
-            alert("more than 20 chracters!");
-            return false;
-        }
-    
-        //checks for the currency search box
-        if (currencyQuery.length > 0 && !/^[A-Z]{3}$/.test(currencyQuery)) {
-            alert("Only 3 upper case letters are allowed!");
-            return false;
-        }
+        return false;
+
+    }
+
+    //checks for the country search box
+    if (countryQuery.length > 20) {
+        alert("more than 20 characters!");
+        return false;
+    }
+
+    //checks for the currency search box
+    if (currencyQuery.length > 0 && !/^[A-Z]{3}$/.test(currencyQuery)) {
+        alert("Only 3 upper case letters are allowed!");
+        return false;
+    }
 
     //clears any existing search results
     while (searchResultsList.firstChild) {
@@ -242,23 +247,17 @@ function searchUpdate() {
     if (countryQuery.length > 0) {
         matches = data.filter(item => item.name.toLowerCase().includes(countryQuery.toLowerCase()));
     }
+
     //filters for the currency search bar
     if (currencyQuery.length > 0) {
         matches = data.filter(item => item.currency.toUpperCase().includes(currencyQuery.toUpperCase()));
     }
 
-    matches.slice(0, 5).forEach(match => {
-        const listItem = document.createElement("li");
-        listItem.textContent = `Name: ${match.name}, Currency: ${match.currency}`;
-        searchResultsList.appendChild(listItem);
-    });
-
-    if (matches.length > 0) {
-        document.querySelector(".search-results").style.display = "block";
-    } else {
-        document.querySelector(".search-results").style.display = "none";
+    //Dynamically update list as the user is typing new characters or deleting characters in the search box
+    for (let i = 0; i < Math.min(5, matches.length); i++) {
+        let li = document.createElement("li");
+        let text = document.createTextNode(`Name: ${matches[i].name}, Currency: ${matches[i].currency}`);
+        li.appendChild(text);
+        searchResultsList.appendChild(li);
     }
-
-    document.getElementById("countryBar").addEventListener("input", searchUpdate);
-    document.getElementById("currencyBar").addEventListener("input", searchUpdate);
 }
