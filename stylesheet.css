@@ -19,7 +19,6 @@
   width: 100%;
   margin: 0;
   padding: 0;
-  height: 10vh;
   background: #ffffff;
   align-items: center;
   text-align: middle;
@@ -44,4 +43,17 @@ button {
 
 .input-container {
   margin-right: 10px;
+}
+
+
+.search-results {
+  background-color: #0ddefa; 
+  border: 1px solid #000000; 
+  padding: 10px; 
+}
+
+.search-results-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }

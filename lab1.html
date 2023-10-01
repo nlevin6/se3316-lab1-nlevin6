@@ -7,14 +7,14 @@
     <meta name="description" content="Lab 1">
     <meta name="author" content="Nikita Levin">
     <link rel="stylesheet" href="stylesheet.css">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </head>
 
 <body>
     <h1>SE 3316 Lab 1</h1>
     <p>List of Countries</p>
     <div class="search-bars">
-        <form class="search-form">
+        <form id="searchForm" class="search-form">
             <div class="input-container">
                 <input id="countryBar" type="text" placeholder="Search By Country">
             </div>
@@ -22,14 +22,12 @@
             <div class="input-container">
                 <input id="currencyBar" type="text" placeholder="Search By Currency Code">
             </div>
-            <button type="submit" onclick="searchUpdate()">Search</button>
+            <button type="submit">Search</button>
         </form>
     </div>
-    <div class="search-results" style="display: none;">
+    <div class="search-results">
         <h2>Search Results</h2>
-        <ul class="search-results-list">
-
-        </ul>
+        <ul class="search-results-list"></ul>
     </div>
     <ul class="main-ul">
         <li>
