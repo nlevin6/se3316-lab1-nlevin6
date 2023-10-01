@@ -8,14 +8,14 @@ function searchUpdate() {
     const data = [
         {
             name: "Andorra",
-            currency: "EUR",
+            currency: "EUR (€)",
             regions: ["Andorra la Vella", "Canillo", "Encamp", "Escaldes-Engordany", "La Massana", "Ordino", "SantJulià de"],
             wikipediaLink: "https://en.wikipedia.org/wiki/Andorra",
             flag: "ad"
         },
         {
             name: "Austria",
-            currency: "EUR",
+            currency: "EUR (€)",
             regions: ["Vorarlberg", "Tirol", "Salzburg", "Upper Austria", "Lower Austria", "Vienna", "Styria", "Carinthia", "Burgenland"],
             wikipediaLink: "https://en.wikipedia.org/wiki/Austria",
             flag: "at"
@@ -29,7 +29,7 @@ function searchUpdate() {
         },
         {
             name: "Belgium",
-            currency: "EUR",
+            currency: "EUR (€)",
             regions: ["Flemish", "Brussels-Capital", "Walloon"],
             wikipediaLink: "https://en.wikipedia.org/wiki/Belgium",
             flag: "be"
@@ -78,7 +78,7 @@ function searchUpdate() {
         },
         {
             name: "Germany",
-            currency: "EUR",
+            currency: "EUR (€)",
             regions: ["Baden-Württemberg", "Bavaria", "Berlin", "Brandenburg", "Bremen", "Hamburg", "Hesse", "Lower Saxony", "Mecklenburg-Vorpommern", "North Rhine-Westphalia", "Rhineland-Palatinate", "Saarland", "Saxony-Anhalt", "Schleswig-Holstein", "Thuringia"],
             wikipediaLink: "https://en.wikipedia.org/wiki/Germany",
             flag: "de"
@@ -92,7 +92,7 @@ function searchUpdate() {
         },
         {
             name: "Greece",
-            currency: "EUR",
+            currency: "EUR (€)",
             regions: ["Crete", "Peloponnese", "Central Greece", "Ionian Islands", "Dodecanese", "Epirus", "Attica", "Thessaly", "Chalcidice", "Aegean Sea", "Thrace", "Western Greece", "Eastern Macedonia and Thrace", "Macedonia", "Central Macedonia", "Cyclades", "South Aegean", "North Aegian", "Aegean Islands", "Achaea", "Arcadia", "Sporades", "Western Macedonia", "Saronic Islands"],
             wikipediaLink: "https://en.wikipedia.org/wiki/Greece",
             flag: "gr"
@@ -113,7 +113,7 @@ function searchUpdate() {
         },
         {
             name: "Italy",
-            currency: "EUR",
+            currency: "EUR (€)",
             regions: ["Tuscany", "Sicily", "Umbria", "Emilia-Romagna", "Puglia", "Piedmont", "Lombardy", "Calabria", "Campania", "Veneto", "Liguria", "Friuli-Venezia Giulia", "Marche", "Abruzzo", "Sardinia", "Aosta Valley", "Lazio", "Basilicata", "Molise", "Trentino-South Tyrol", "Southern Italy", "Northern Italy", "Trentino", "Dolomites"],
             wikipediaLink: "https://en.wikipedia.org/wiki/Italy",
             flag: "it"
@@ -141,7 +141,7 @@ function searchUpdate() {
         },
         {
             name: "Slovakia",
-            currency: "EUR",
+            currency: "EUR (€)",
             regions: ["Bratislava", "Trnava", "Trenčín", "Nitra", "Žilina", "Banská Bystrica", "Prešov", "Košice"],
             wikipediaLink: "https://en.wikipedia.org/wiki/Slovakia",
             flag: "sk"
